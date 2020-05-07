@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Assembly Voyageur</title>
+
+    <!-- Bootstrap -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+          
+              
+          
+          
+<h1>Assembly Voyager: Embark on Your Journey</h1>
+<div class="voyage mb-1">
+  <div class="voyage-body">
+    <label>Voyage Directions:</label>
+    <div>
+      <h2>i386 Island</h2>
+      You start off your voyage at i386 island. You find a map, but you're not
+      sure how to interpret it. Before we go, we should check on the supplies.
+      It looks like we've got enough of most things:
+      <ul>
+        <li>0x28cb958d EAX's</li>
+        <li>0xb643052 EBX's</li>
+        <li>0x8e44508f ECX's</li>
+        <li>0x10231413 EDX's</li>
+        <li>0xcbb6536f ESI's</li>
+        <li>0x4ab7291d EDI's</li>
+      </ul>
+      Perhaps you can help us decode the map:<br/>
+      <textarea cols="80" rows="10" disabled="true">lea ecx, [esi+8*edx-3605]
+sub esi, ebx
+shr esi, 4
+not edi
+or ecx, ebx
+andn ebx, edx, eax
+rol edx, 8
+and ecx, esi
+je label_qwqthrijuy
+mov edx, esi
+label_qwqthrijuy:
+lea eax, [ecx+3101]
+lea esi, [ebx+4*ecx+1359]
+shl ecx, 14
+xor ebx, eax
+sal ecx, 8
+lea ecx, [edi+4*esi+1864]
+add edi, edx
+cmpxchg ebx, ecx
+and edi, eax
+shl eax, 6
+andn edi, ebx, esi
+and eax, 0x1f
+sarx edi, edx, eax
+rol esi, 11
+shr esi, 12
+lea ebx, [edx+8*eax-3202]
+and ebx, 0x1f
+shlx edi, edx, ebx
+</textarea>
+    </div>
+    <br/>
+    <div>
+      <h2>x86_64 Caves</h2>
+      Next, we'll stop by the x86_64 caves and do some spelunking.
+      Unfortunately, we didn't pack any clothes for the 64 degree temperatures
+      in the caves. Thankfully we know how to convert our supplies from i386
+      island though:
+      <ul>
+        <li>X86_64.RAX = i386.EAX</li>
+        <li>X86_64.RBX = i386.EBX</li>
+        <li>X86_64.RCX = i386.ECX</li>
+        <li>X86_64.RDX = i386.EDX</li>
+        <li>X86_64.RSI = i386.RSI</li>
+        <li>X86_64.RDI = i386.EDI</li>
+      </ul>
+      However, the map is still confusing to me. Can you help us scout out how
+      to get to our next location?<br/>
+      <textarea cols="80" rows="10" disabled="true">xor rsi, rdi
+lea rcx, [rbx+2*rax-2074]
+rorx rdi, rax, 11
+xor rdx, rax
+and rdi, 0x1f
+sarx rdx, rbx, rdi
+test rsi, rax
+setz bl
+sar rax, 4
+ror rax, 7
+dec rsi
+and rsi, 0x1f
+shlx rdx, rbx, rsi
+or rbx, rax
+and rcx, 0x1f1f
+bextr rdi, rbx, rcx
+and rax, 0x1f
+shrx rdx, rdi, rax
+shl rcx, 4
+test rdi, rcx
+setne al
+lea rax, [rdi+4*rsi+3292]
+and rcx, 0x1f
+sarx rdx, rax, rcx
+popcnt rcx, rsi
+test rax, rdx
+cmovne rcx, rax
+bswap rax
+sar rdx, 2
+inc rax
+and rcx, 0x1f1f
+bextr rdx, rdi, rcx
+cmp rax, rsi
+jnz label_iabbhypsko
+mov rdi, rsi
+label_iabbhypsko:
+and rsi, 0x1f
+shlx rax, rcx, rsi
+sub rdx, rbx
+lea rcx, [rdi+2*rax-1854]
+test rdi, rbx
+cmovz rcx, rbx
+ror rdi, 3
+test rdx, rdi
+cmovne rcx, rdx
+lea rsi, [rdx+1863]
+lea rdi, [rbx+4*rcx+1648]
+shl rbx, 11
+shl rdi, 10
+test rdx, rdi
+jnz label_xnleuwvlyx
+mov rcx, rdi
+label_xnleuwvlyx:
+shl rdi, 11
+xor rax, rcx
+lea rdx, [rax+1234]
+lea rbx, [rax+3561]
+sal rsi, 6
+andn rcx, rsi, rdx
+test rbx, rcx
+cmovne rdi, rbx
+and rax, 0x1f
+sarx rcx, rbx, rax
+and rdx, 0x1f
+shlx rsi, rdi, rdx
+mul rsi
+and rdx, 0x1f1f
+bextr rax, rbx, rdx
+inc rax
+sar rax, 8
+xor rax, rcx
+and rcx, 0x1f
+sarx rdi, rsi, rcx
+</textarea>
+    </div>
+    <br/>
+    <div>
+      <h2>AARCH64 Forest</h2>
+      After making it out of the x86_64 caves, we'll have to make our way
+      through the treacherous AARCH64 forest. We'll need to trade our spelunking
+      gear for some hiking equipment, using this guide:
+      <ul>
+        <li>AARCH64.X1 = X86_64.RAX</li>
+        <li>AARCH64.X2 = X86_64.RBX</li>
+        <li>AARCH64.X3 = X86_64.RCX</li>
+        <li>AARCH64.X4 = X86_64.RDX</li>
+        <li>AARCH64.X5 = X86_64.RSI</li>
+        <li>AARCH64.X6 = X86_64.RDI</li>
+      </ul>
+      The map for the AARCH64 forest isn't exactly easy to read, but with luck
+      we'll make it through.<br/>
+      <textarea cols="80" rows="10" disabled="true">msub x2, x2, x3, x5
+ubfx x2, x3, 10, 7
+sub x2, x6, x4, LSR #7
+sub x2, x3, x4, ASR #3
+add x2, x4, x1, ASR #12
+bfi x4, x2, 1, 16
+add x6, x4, x2, LSL #8
+sub x6, x1, x2, LSL #6
+add x4, x3, x1, LSL #11
+clz x3, x6
+rev x5, x6
+sub x2, x5, x4, LSL #15
+eon x3, x1, x6
+cbnz x2, label_tfuqxxauwf
+mov x4, x6
+label_tfuqxxauwf:
+sub x2, x5, x6, LSL #16
+clz x6, x5
+add x1, x2, x6, LSR #13
+mul x5, x1, x4
+msub x1, x1, x2, x6
+ubfx x1, x6, 15, 10
+mneg x5, x6, x1
+sub x4, x1, x2
+sub x3, x1, x2, LSL #13
+mneg x3, x1, x6
+eon x6, x1, x2, LSR 15
+sub x1, x5, x4, ASR #15
+add x6, x3, x2
+clz x1, x2
+mov x2, x4, ROR #6
+bfi x2, x4, 3, 2
+madd x1, x2, x4, x1
+orr x3, x5, x2
+add x2, x3, x1, ASR #2
+neg x1, x3
+orr x2, x1, x4
+msub x3, x3, x1, x5
+eon x5, x4, x6, ASR 14
+mov x5, x4, LSR #14
+cls x4, x2
+rbit x5, x1
+mneg x6, x1, x2
+cls x2, x1
+mov x6, x3, ROR #10
+rbit x3, x2
+eon x1, x6, x3
+madd x2, x6, x5, x2
+</textarea>
+    </div>
+    <br/>
+    <div>
+      <h2>MIPS Mountain</h2>
+      Next, we'll stop by MIPS mountain and see if we can scale its peaks.
+      Once again, we'll need to convert our remaining supplies:
+      <ul>
+        <li>MIPS.S1 = AARCH64.X1 &amp; 0xffffffff</li>
+        <li>MIPS.S2 = AARCH64.X2 &amp; 0xffffffff</li>
+        <li>MIPS.S3 = AARCH64.X3 &amp; 0xffffffff</li>
+        <li>MIPS.S4 = AARCH64.X4 &amp; 0xffffffff</li>
+        <li>MIPS.S5 = AARCH64.X5 &amp; 0xffffffff</li>
+        <li>MIPS.S6 = AARCH64.X6 &amp; 0xffffffff</li>
+      </ul>
+      I don't think I'll ever figure these maps out.<br/>
+      <textarea cols="80" rows="10" disabled="true">beq s3, s4, label_rhmsacvjgb
+move s4, s5
+label_rhmsacvjgb:
+sll s4, s3, 6
+beqz s5, label_pvvtecjlyb
+move s3, s4
+label_pvvtecjlyb:
+sra s3, s4, 9
+xori s3, s5, 642
+nor s1, s2
+and s4, s5
+srl s2, s4, 14
+andi s2, s3, 2728
+nor s4, s6
+sltu s2, s1, s3
+mult s6, s1
+mflo s4
+mfhi s1
+sltu s1, s3, s2
+beqz s4, label_ewplgbepmf
+move s5, s2
+label_ewplgbepmf:
+sra s6, s2, 3
+srl s6, s1, 6
+bne s2, s1, label_wpdbcphkav
+move s1, s6
+label_wpdbcphkav:
+addu s2, s3
+mult s1, s6
+mflo s1
+mfhi s3
+bne s6, 2526, label_eykkyuibne
+move s5, s4
+label_eykkyuibne:
+and s6, s3
+mult s1, s3
+mflo s1
+mfhi s5
+</textarea>
+    </div>
+    <br/>
+    <div>
+      <h2>PowerPC Peninsula</h2>
+      We're almost there. Our final task is to cross the PowerPC peninsula.
+      Thankfully our mountaineering gear can be repurposed for crossing the
+      peninsula.
+      <ul>
+        <li>PowerPC.R1 = MIPS.S1</li>
+        <li>PowerPC.R2 = MIPS.S2</li>
+        <li>PowerPC.R3 = MIPS.S3</li>
+        <li>PowerPC.R4 = MIPS.S4</li>
+        <li>PowerPC.R5 = MIPS.S5</li>
+        <li>PowerPC.R6 = MIPS.S6</li>
+      </ul>
+      See if you can interpret the map and help us reach the treasure.<br/>
+      <textarea cols="80" rows="10" disabled="true">xor r1, r5, r2
+or r2, r1, r6
+orc r5, r6, r2
+andc r2, r1, r6
+cmpwi 7, r6, 2679
+bne 7, label_juuectiolu
+mr r1, r2
+label_juuectiolu:
+nor r5, r2, r1
+addis r1, r4, 821
+mulli r5, r6, 2337
+rlwnm r4, r6, r1, 14, 11
+cntlzw r1, r5
+rlwnm r5, r2, r6, 15, 3
+rlwimi r6, r3, 13, 3, 1
+cmpwi 7, r4, 975
+bne 7, label_eaocdljhcl
+mr r6, r1
+label_eaocdljhcl:
+andc r6, r3, r5
+andc r3, r4, r6
+or r5, r1, r3
+cmpw 7, r6, r4
+beq 7, label_wcaboevbqt
+mr r4, r2
+label_wcaboevbqt:
+or r5, r1, r3
+xor r4, r1, r5
+add r3, r6, r2
+rlwimi r2, r5, 16, 16, 10
+xor r2, r1, r3
+cmpwi 7, r6, 695
+beq 7, label_pvpgobidcm
+mr r3, r5
+label_pvpgobidcm:
+nand r2, r4, r6
+and r2, r4, r5
+cmpw 7, r1, r5
+beq 7, label_pgwfipkbae
+mr r5, r3
+label_pgwfipkbae:
+add r5, r6, r1
+orc r2, r5, r1
+rlwnm r6, r1, r2, 7, 11
+</textarea>
+    </div>
+    <br/>
+    <div>
+
+  </div>
+  Once you've reached your destination, <a href="/voyage?id=7">let us know what you find.</a>
+  <br/>
+</div>
+
+        </div>
+    </body>
+</html>
