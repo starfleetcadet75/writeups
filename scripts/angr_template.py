@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# Usage: docker run -it --rm -v $PWD:/local angr/angr
 import logging
 import claripy
 import angr
